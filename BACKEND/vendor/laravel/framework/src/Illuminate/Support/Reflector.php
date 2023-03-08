@@ -150,7 +150,7 @@ class Reflector
     {
         $backedEnumClass = (string) $parameter->getType();
 
-        if (enum_exists($backedEnumClass)) {
+        if (function_exists('enum_exists') && enum_exists($backedEnumClass)) {
             $reflectionBackedEnum = new ReflectionEnum($backedEnumClass);
 
             return $reflectionBackedEnum->isBacked()
