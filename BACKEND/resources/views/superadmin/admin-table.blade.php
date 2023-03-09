@@ -36,7 +36,6 @@
                         <form action='/superadmin/admin-table'  method="POST">
                             @csrf
                             <div class="input-group" >
-                        
                                 <input type="hidden" class="form-control" value={{ $user->id }} name="id">
                                 </div>
                                 <button type="submit"  class="btn btn-success">

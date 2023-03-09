@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-
+use Illuminate\Http\Response;
+use Session;
 
 class HomeController extends Controller
 {
@@ -13,6 +14,7 @@ class HomeController extends Controller
      *
      * @return void
      */
+  
     public function __construct()
     {
         $this->middleware('auth');
@@ -23,16 +25,17 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index() 
     {
+        
         if(auth()->user()->code==0){
         return view('home');
         }else{
-  
-            
-            return view('confirm-otp');
+            $data = User::all();
+            return view('confirm-otp',['users' => $data]);   
         }
     }
+
     public function superHome(){
        
 
@@ -43,15 +46,21 @@ class HomeController extends Controller
        
         return view('superadmin/admin-table',['users' => $data]);
     }
+
     public function approval()
-{
-    return view('approval');
-}
-public function confirmOtpForm(Request $request){
+    {
+        return view('approval');
+    }
+
+    public function confirmOtpForm(Request $request){
    
     $user = user::find($request->id);
+    if($request->code==auth()->user()->code){
     $user->code = 0;
     $user->save();
     return view('home');
+    
+}
+dd('error');
 }
 }

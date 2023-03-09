@@ -35,7 +35,8 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::post('/superadmin/admin-table/verify', [App\Http\Controllers\adminController::class, 'update']);
-Route::get('/confirm-otp', [App\Http\Controllers\HomeController::class, 'confirmOtpForm'])->name('confirm.otp');
 
+Route::get('/confirm-otp', [App\Http\Controllers\HomeController::class, 'confirmOtpForm']);
+Route::post('/confirm-otp', [App\Http\Controllers\HomeController::class, 'confirmOtpForm']);
 
 
