@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,5 +37,9 @@ Route::post('/superadmin/admin-table/verify', [App\Http\Controllers\adminControl
 
 Route::get('/confirm-otp', [App\Http\Controllers\HomeController::class, 'confirmOtpForm']);
 Route::post('/confirm-otp', [App\Http\Controllers\HomeController::class, 'confirmOtpForm']);
+
+# Sms Notification
+
+Route::get('/send-sms-notification', [App\Http\Controllers\NotificationController::class, 'sendSmsNotification']);
 
 
