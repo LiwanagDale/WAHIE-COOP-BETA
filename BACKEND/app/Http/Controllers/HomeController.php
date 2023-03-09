@@ -26,19 +26,12 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index() 
-    {
-        
-        if(auth()->user()->code==0){
+    { 
         return view('home');
-        }else{
-            $data = User::all();
-            return view('confirm-otp',['users' => $data]);   
-        }
+      
     }
 
     public function superHome(){
-       
-
         return view('super-home');
     }
     public function adminTable(){
@@ -51,6 +44,15 @@ class HomeController extends Controller
     {
         return view('approval');
     }
+    public function confirmOtp()
+    {
+        if(auth()->user()->code==0){
+            return redirect('home');
+        }else{
+        $data = User::all();
+        return view('confirm-otp',['users' => $data]);
+    }
+    }
 
     public function confirmOtpForm(Request $request){
    
@@ -58,7 +60,7 @@ class HomeController extends Controller
     if($request->code==auth()->user()->code){
     $user->code = 0;
     $user->save();
-    return view('home');
+    return redirect('home');
     
 }
 dd('error');
