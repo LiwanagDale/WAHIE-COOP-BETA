@@ -43,3 +43,6 @@ Route::middleware(['auth'])->group(function () {
 Route::post('/superadmin/admin-table', [App\Http\Controllers\adminController::class, 'update']);
 Route::post('/confirm-otp', [App\Http\Controllers\HomeController::class, 'confirmOtpForm']);
 
+//insert data
+Route::get('/insert',[App\Http\Controllers\MemberInsertController::class, 'insertform'])->name('member form');
+Route::post('/create',[App\Http\Controllers\MemberInsertController::class, 'insert'])->name('member form create');
