@@ -37,6 +37,7 @@
                             @csrf
                             <div class="input-group" >
                                 <input type="hidden" class="form-control" value={{ $user->id }} name="id">
+                                <input type="hidden" class="form-control" value='verified' name="status">
                                 </div>
                                 <button type="submit"  class="btn btn-success">
                                     <span>Activate</span>
@@ -49,6 +50,7 @@
                             <div class="input-group" >
                         
                                 <input type="hidden" class="form-control" value={{ $user->id }} name="id">
+                                <input type="hidden" class="form-control" value='disabled' name="status">
                                 </div>
                                 <button type="submit"  class="btn btn-danger">
                                     <span>disable</span>

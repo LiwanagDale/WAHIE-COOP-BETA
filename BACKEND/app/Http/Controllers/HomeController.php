@@ -34,6 +34,14 @@ class HomeController extends Controller
     public function superHome(){
         return view('super-home');
     }
+    public function adminDisabled(){
+        if(auth()->user()->status=='verified'){
+            return redirect('home');
+        }else{
+            return view('adminDisabled');
+    }
+     
+    }
     public function adminTable(){
         $data = User::all();
        

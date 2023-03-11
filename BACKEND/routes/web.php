@@ -40,6 +40,14 @@ Route::middleware(['auth'])->group(function () {
 });
 });
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/adminDisabled', [App\Http\Controllers\HomeController::class, 'adminDisabled'])->name('adminDisabled');
+
+        Route::middleware(['adminDisabled'])->group(function () {
+        Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('roleTwo');
+    });
+});
+
 Route::post('/superadmin/admin-table', [App\Http\Controllers\adminController::class, 'update']);
 Route::post('/confirm-otp', [App\Http\Controllers\HomeController::class, 'confirmOtpForm']);
 

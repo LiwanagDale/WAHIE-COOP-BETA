@@ -67,5 +67,6 @@ class Kernel extends HttpKernel
         'approved' => \App\Http\Middleware\CheckVerified::class,
         'codeZero' => \App\Http\Middleware\isZero::class,
         'roleTwo' => \App\Http\Middleware\roleTwo::class,
+        'adminDisabled' => \App\Http\Middleware\adminDisabled::class,
     ];
 }
