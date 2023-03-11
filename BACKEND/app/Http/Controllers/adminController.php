@@ -17,12 +17,12 @@ class adminController extends Controller
     {
     
         $user = user::find($request->id);
-
+       $status = $request->status;
         if($user->status=='verified'){
-            $user->status = 'disabled';
+            $user->status =  $status;
         }
         elseif($user->status!='verified'){
-            $user->status = 'verified';
+            $user->status =  $status;
 
             if($user->code!=0){
             $code = $user->code;
