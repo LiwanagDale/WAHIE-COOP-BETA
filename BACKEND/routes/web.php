@@ -54,3 +54,10 @@ Route::middleware(['adminDisabled'])->group(function () {
 
 Route::post('/confirm-otp', [App\Http\Controllers\HomeController::class, 'confirmOtpForm']);
 
+#Sms Notification
+
+Route::get('/send-sms-notification', [App\Http\Controllers\NotificationController::class, 'sendSmsNotification']);
+
+#insert data
+Route::get('/insert',[MemberInsertController::class, 'insertform'])->name('member form');
+Route::post('/create',[MemberInsertController::class, 'insert'])->name('member form create');
