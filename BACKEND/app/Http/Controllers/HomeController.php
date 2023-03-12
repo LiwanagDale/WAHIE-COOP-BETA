@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Session;
+
+
+
 
 class HomeController extends Controller
 {
@@ -33,6 +35,15 @@ class HomeController extends Controller
 
     public function superHome(){
         return view('super-home');
+    }
+    
+    public function adminDisabled(){
+        if(auth()->user()->status=='verified'){
+            return redirect('home');
+        }else{
+            return view('adminDisabled');
+    }
+     
     }
     public function adminTable(){
         $data = User::all();

@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class checkVerified
+class adminDisabled
 {
     /**
      * Handle an incoming request.
@@ -15,12 +15,14 @@ class checkVerified
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
 
-       //will redirect to disable webpage if the admin account is disabled
+
+     //will redirect to disable webpage if the admin account is disabled
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->status=='notverified'){
-            return redirect()->route('approval');
+        if(auth()->user()->status=='disabled'){
+            return redirect()->route('adminDisabled');
         }
         return $next($request);
     }
-}
+    }
+

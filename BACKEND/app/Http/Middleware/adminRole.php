@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class roleTwo
+class adminRole
 {
     /**
      * Handle an incoming request.
@@ -14,12 +14,18 @@ class roleTwo
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
+
+      //will be redirected back to admin webpage when trying to access superadmin
     public function handle(Request $request, Closure $next)
     {
         if(auth()->user()->role==0){
             return $next($request);
         }else{
-        return redirect('superadmin/home')->with('error', 'You do not have access to admin');
+            return redirect('/superadmin/home')->with('error', 'You do not have access to admin');
         }
+
+        
+        
     }
+    
 }

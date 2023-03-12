@@ -20,29 +20,44 @@ Route::get('/', function () {
 
 
 
-
-
 Auth::routes();
 
 
-Route::get('/superadmin/home', [App\Http\Controllers\HomeController::class, 'superHome'])->name('super.home')->middleware('role');
-Route::get('/superadmin/admin-table', [App\Http\Controllers\HomeController::class, 'adminTable'])->middleware('role');
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/approval', [App\Http\Controllers\HomeController::class, 'approval'])->name('approval');
+//superadmin 
+Route::middleware(['auth','notAdmin'])->group(function () {
+    Route::get('/superadmin/home', [App\Http\Controllers\HomeController::class, 'superHome'])->name('super.home');
+    Route::get('/superadmin/admin-table', [App\Http\Controllers\HomeController::class, 'adminTable']);
+});
 
-    Route::middleware(['approved'])->group(function () {
-        Route::get('/confirm-otp', [App\Http\Controllers\HomeController::class, 'confirmOtp'])->name('confirm-otp');
+Route::post('/superadmin/admin-table', [App\Http\Controllers\superadminController::class, 'update']);
 
-        Route::middleware(['codeZero'])->group(function () {
-        Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('roleTwo');
+//---------------------------------------------------------------------------------------------------------------------------
+ 
+//admin
+Route::middleware(['auth','notSuperadmin'])->group(function () {
+    Route::get('/approval', [App\Http\Controllers\HomeController::class, 'approval'])->name('approval'); //check if verified
+
+Route::middleware(['approved'])->group(function () {
+        Route::get('/confirm-otp', [App\Http\Controllers\HomeController::class, 'confirmOtp'])->name('confirm-otp');  //check if code is zero
+
+Route::middleware(['codeZero'])->group(function () {
+            Route::get('/adminDisabled', [App\Http\Controllers\HomeController::class, 'adminDisabled'])->name('adminDisabled'); //check if disabled
+
+Route::middleware(['adminDisabled'])->group(function () {
+                Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+                });
+            });
+        });
     });
-});
-});
 
-Route::post('/superadmin/admin-table', [App\Http\Controllers\adminController::class, 'update']);
 Route::post('/confirm-otp', [App\Http\Controllers\HomeController::class, 'confirmOtpForm']);
 
-//insert data
-Route::get('/insert',[App\Http\Controllers\MemberInsertController::class, 'insertform'])->name('member form');
-Route::post('/create',[App\Http\Controllers\MemberInsertController::class, 'insert'])->name('member form create');
+#Sms Notification
+
+Route::get('/send-sms-notification', [App\Http\Controllers\NotificationController::class, 'sendSmsNotification']);
+
+#insert data
+Route::get('/insert',[MemberInsertController::class, 'insertform'])->name('member form');
+Route::post('/create',[MemberInsertController::class, 'insert'])->name('member form create');
