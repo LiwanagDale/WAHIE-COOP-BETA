@@ -14,6 +14,8 @@ class checkVerified
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
+
+       //will redirect to disable webpage if the admin account is disabled
     public function handle(Request $request, Closure $next)
     {
         if(auth()->user()->status=='notverified'){

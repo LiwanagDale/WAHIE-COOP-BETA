@@ -7,10 +7,11 @@ use Illuminate\Http\Request;
 use App\Mail\MailOtp;
 use App\Models\EmailOtp;
 use App\Mail\enableAdmin;
-use App\Models\EmailEnabled;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
+
+//controller for superadmin
 class adminController extends Controller
 {
     public function update(Request $request)
