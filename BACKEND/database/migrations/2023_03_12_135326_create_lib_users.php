@@ -13,14 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('lib_user', function (Blueprint $table) {
+        Schema::create('lib_users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('role');
+            $table->String('user_type');
+            $table->integer('role');
         });
 
-        DB::table('lib_user')->insert(array('role' => 'admin'));
-        DB::table('lib_user')->insert(array('role' => 'superadmin'));
-        DB::table('lib_user')->insert(array('role' => 'member'));
+        DB::table('lib_users')->insert(array('user_type' => 'admin','role' => '0'));
+        DB::table('lib_users')->insert(array('user_type' => 'superadmin','role' => '1'));
+        DB::table('lib_users')->insert(array('user_type' => 'member','role' => '2'));
     }
 
     /**

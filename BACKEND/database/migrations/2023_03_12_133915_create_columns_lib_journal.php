@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        $table->dropColumn(['journal_number', 'journal_name', 'journal_type']);
+       Schema::dropIfExists('lib_journals');
     }
 };
