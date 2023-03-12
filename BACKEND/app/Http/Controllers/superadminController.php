@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Mail;
 
 
 //controller for superadmin
-class adminController extends Controller
+class superadminController extends Controller
 {
     public function update(Request $request)
     {
