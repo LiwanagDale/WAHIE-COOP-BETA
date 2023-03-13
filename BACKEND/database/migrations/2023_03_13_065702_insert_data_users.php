@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        DB::table('users')->insert(array('name' => 'SuperAdmin','email' => 'superadmin@gmail.com','code' => '1','status' => 'verified','email_verified_at' => null,'password' => 'admin123','remember_token' => null));
+        DB::table('users')->insert(array('name' => 'SuperAdmin','email' => 'superadmin@gmail.com','role' => '1','status' => 'verified','code' => '0','email_verified_at' => null,'password' => Hash::make('admin123'),'remember_token' => null));
     }
 
     /**
