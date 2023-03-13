@@ -8,24 +8,25 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('members', function (Blueprint $table) {
             $table->id();
             $table->integer('account_id');
             $table->string('first_name');
-            $table->string('middle_name');
             $table->string('last_name');
-            $table->string('suffix');
+            $table->string('middle_name')->nullable();
+            $table->string('suffix')->nullable();
             $table->date('birthdate');
             $table->string('address');
             $table->string('spouse')->nullable();
             $table->integer('tin_number');
             $table->string('occupation');
-            $table->string('gender');
+            $table->string('gender', 10);
             $table->string('department');
-            $table->string('member_office');
             $table->string('employment_status');
             $table->string('company_name');
             $table->string('company_address');
@@ -38,8 +39,10 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('members');
     }
