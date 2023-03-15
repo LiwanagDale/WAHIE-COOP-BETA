@@ -1,0 +1,87 @@
+<router-outlet></router-outlet>
+
+<head><title>Login</title></head>
+<main>
+    <div class="box">
+        <div class="inner-box">
+
+            <div class="form-wrap" >    
+                <form class="login-form" [@formState]="loginState">
+                    <div class="wah-logo">
+                      <!--  <img src="assets/image/wahlogo.png" alt="WAH Logo"> -->
+                        <p>WAH <br> Cooperative</p>
+                    </div>
+
+                    <div class="heading">
+                        <h1>Welcome</h1>
+                        <p>Enter details to login to the admin panel</p>
+                    </div>
+                
+                    <div class="txt-field">
+                        <div class="txt-wrap">
+                            <input type="email" minlength="4" class="input-field" id="email" placeholder="Email" required><br>
+                        </div>
+                        <div class="txt-wrap">
+                            <input [type]="changetype?'password':'text'" minlength="8" class="input-field" id="pass" placeholder="Password" required>
+                            <span class="eye" (click)="viewpass()"><i [ngClass]="visible?'fa fa-eye-slash':'fa fa-eye'"></i></span>
+                        </div>
+        
+                            <a href="forgot-pass" class="forgot-pass">Forgot Password?</a><br>
+                            <button class="submit">Login</button>
+
+                            <p class="account">
+                                Don't have an account? <a  class="toggle" (click)="toggle()" onclick="clearInputField()" >Sign Up</a>
+                            </p>
+                    </div>
+                </form>
+            </div>
+
+                    <div class="reg-wrap" [@formState3]="registerState" >
+                        <form class="register-form" >
+                                
+                            <div class="whlogo"> 
+                            <!-- <img src="assets/image/wahlogo.png">-->
+                                <p>WAH <br> Cooperative</p>
+                            </div>
+                            <div class="heading">
+                                <h1>Get Started</h1>
+                                <p>Create an account to login</p>
+                            </div>
+                            
+                                <div class="txt-field">
+                                    <div class="txt-wrap">
+                                        <input type="text" name="name" class="input-field" id="name" placeholder="Name" required> <br>
+                                    </div>
+                                    <div class="txt-wrap">
+                                        <input type="email" name="email" class="input-field" id="reg-email" placeholder="Email" required> <br>
+                                    </div>
+                                    <div class="txt-wrap">
+                                        <input [type]="changetype?'password':'text'" minlength="8" name="pass" class="input-field" id="reg-pass" placeholder="Password" required>
+                                        <span class="eye" (click)="viewpass()"><i [ngClass]="visible?'fa fa-eye-slash':'fa fa-eye'"></i></span><br>
+                                    </div>
+                                    <div class="txt-wrap">
+                                        <input [type]="cchangetype?'password':'text'" minlength="8" name="cpass" class="input-field" id="confirm-pass" placeholder="Confirm Password" required>
+                                    <span class="eye" (click)="cviewpass()"><i [ngClass]="cvisible?'fa fa-eye-slash':'fa fa-eye'"></i></span>
+                                    </div>
+                                </div>
+                                    <div class="account">
+                                        <input type="checkbox">  I agree to the   <a href="#" class="condition"> &nbsp; Terms & Condition</a>
+                                    </div>
+                                    
+                                        <button class="submit"> Sign Up </button>
+                                        <div class="account">
+                                            Already have an account? <a class="toggle" (click)="toggle()" onclick="clearInputField()" >Login</a>
+                                        </div>
+                        </form>
+                    </div>    
+            
+
+            <div class="login-vector" [@formState2]="loginState" >
+                <img src="assets/image/login.png" class="login " > 
+            </div>
+            <div class="reg-vector" [@formState4]="registerState" >
+                <img src="assets/image/login.png" class="register"> 
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url(src\assets\font\Poppins-ExtraBold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-Medium';
+    src: url(src\assets\font\Poppins-Medium.ttf) format('truetype');
+}

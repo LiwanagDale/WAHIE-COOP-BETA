@@ -1,0 +1,50 @@
+<router-outlet></router-outlet>
+<main>
+    <div class="box">
+        <div class="inner-box">
+            <div class="login-vector ">
+                <img src="assets/image/Reset password-amico.png" class="login">
+            </div>
+
+            <div class="form-wrap">    
+                <form>
+                    <div class="wah-logo">
+                        <img src="assets/image/wahlogo.png" alt="WAH Logo">
+                        <p>WAH <br> Cooperative</p>
+                    </div>
+
+                    <div class="heading">
+                        <h1>Set new password</h1>
+                        <p>Must be at least 8 characters.</p>
+                    </div>
+                
+                    <div class="txt-field">
+                        <div class="txt-wrap">
+                            <label for="pass"> New Password</label>
+                            <input [type]="changetype?'password':'text'" minlength="8" class="input-field" id="pass" placeholder="Enter new password" required>
+                            <div class="eye" (click)="viewpass()"><i [ngClass]="visible?'fa fa-eye-slash':'fa fa-eye'"></i></div>
+                        </div>
+
+                        <div class="txt-wrap">
+                            <label for="pass2"> Confirm Password</label>
+                            <input [type]="cchangetype?'password':'text'"  minlength="8"  class="input-field" id="pass2" placeholder="Confirm your new password" required>
+                            <div class="eye2" (click)="cviewpass()"><i [ngClass]="cvisible?'fa fa-eye-slash':'fa fa-eye'"></i></div>
+                        </div>
+                        
+                            <a href="pass-done" class="save">Save new password</a>
+                            <a href="login" class="signup">Back to log in</a>
+                        
+                            <div class="account">
+                                <div style="text-align:center"></div>
+                                <span class="dot1">1</span>
+                                <span class="dot2">2</span>
+                                <span class="dot3">3</span>
+                                <span class="dot4">4</span>
+                            </div>    
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+        </div>
+    </main>
