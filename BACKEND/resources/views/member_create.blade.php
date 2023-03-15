@@ -14,7 +14,7 @@
 <div class="container">
   <h2 class="text-center">Member Add Management</h2>
   <br>
-  <form action = "/create" method = "post" class="form-group" style="width:70%; margin-left:15%;" action="/action_page.php">
+  {{-- <form action = "/create" method = "post" class="form-group" style="width:70%; margin-left:15%;" action="/action_page.php">
 
   <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>"><input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
 
@@ -62,7 +62,24 @@
     <input type="text" class="form-control" placeholder="Last Name" name="mobile_number"><br>
     <button type="submit"  value = "Add student" class="btn btn-primary">Submit</button>
   </form>
-</div>
+</div> --}}
 
+@foreach ($members as $member)
+<td>{{ $member->first_name }}</td>
+<td>{{ $member->mobile_number }}</td>
+<td>
+<form action='/member_create'  method="POST">
+  @csrf
+  <div class="input-group" >
+      <input type="hidden" class="form-control" value={{ $member->mobile_number }} name="mobile">
+      </div>
+      <button type="submit"  class="btn btn-success">
+          <span>send</span>
+      </button>
+  </div>
+</form>
+<br>
+</td>
+@endforeach
 </body>
 </html>

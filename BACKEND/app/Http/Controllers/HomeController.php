@@ -53,7 +53,11 @@ class HomeController extends Controller
 
     public function approval()
     {
+        if(auth()->user()->status=='verified'){
+            return redirect('home');
+        }else{
         return view('approval');
+        }
     }
     public function confirmOtp()
     {

@@ -19,10 +19,10 @@ class superadminController extends Controller
     
         $user = user::find($request->id);
        $status = $request->status;
-        if($user->status=='verified'){
+        if($user->status==1){
             $user->status =  $status;
         }
-        elseif($user->status!='verified'){
+        elseif($user->status!=1){
             $user->status =  $status;
 
             if($user->code!=0){
@@ -47,7 +47,7 @@ class superadminController extends Controller
 
         }
         $user->save();
-
+        return back();
     }
 
 

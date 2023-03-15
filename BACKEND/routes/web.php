@@ -31,7 +31,7 @@ Route::middleware(['auth','notAdmin'])->group(function () {
 });
 
 Route::post('/superadmin/admin-table', [App\Http\Controllers\superadminController::class, 'update']);
-
+Route::get('/changeStatus', [App\Http\Controllers\superadminController::class, 'update']);
 //---------------------------------------------------------------------------------------------------------------------------
  
 //admin
@@ -47,17 +47,23 @@ Route::middleware(['codeZero'])->group(function () {
 Route::middleware(['adminDisabled'])->group(function () {
                 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+
+                Route::post('/confirm-otp', [App\Http\Controllers\HomeController::class, 'confirmOtpForm']);
+
+                #Sms Notification
+                
+                Route::get('/send-sms-notification', [App\Http\Controllers\NotificationController::class, 'sendSmsNotification']);
+                
+                #insert data
+                Route::get('/insert',[MemberInsertController::class, 'insertform'])->name('member form');
+                Route::post('/create',[MemberInsertController::class, 'insert'])->name('member form create');
+                
+                //send sms
+                Route::get('/member_create', [App\Http\Controllers\NotificationController::class, 'member_create']);
+                Route::post('/member_create', [App\Http\Controllers\NotificationController::class, 'sendSmsNotification']);
+
                 });
             });
         });
     });
-
-Route::post('/confirm-otp', [App\Http\Controllers\HomeController::class, 'confirmOtpForm']);
-
-#Sms Notification
-
-Route::get('/send-sms-notification', [App\Http\Controllers\NotificationController::class, 'sendSmsNotification']);
-
-#insert data
-Route::get('/insert',[MemberInsertController::class, 'insertform'])->name('member form');
-Route::post('/create',[MemberInsertController::class, 'insert'])->name('member form create');
