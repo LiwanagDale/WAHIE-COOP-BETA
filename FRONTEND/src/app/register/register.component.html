@@ -1,0 +1,47 @@
+<main> 
+    <div class="layout" >
+        <div class ="inner-box">
+            <div class="vector" ><img src="assets/image/register.png " ></div>
+                <div class="reg-wrap">
+                    
+                    <form [@formState]="registerState">
+                        
+                        <div class="whlogo"> 
+                            <img src="assets/image/wahlogo.png">
+                            <p>WAH <br> Cooperative</p>
+                        </div>
+                        <div class="heading">
+                            <h1>Get Started</h1>
+                            <p>Create an account to login</p>
+                        </div>
+                        
+                            <div class="text_field" >
+                                <div class="text-wrap">
+                                    <input type="text" name="name" placeholder="Name" required> <br>
+                                </div>
+                                <div class="text-wrap">
+                                    <input type="email" name="email" placeholder="Email" required> <br>
+                                </div>
+                                <div class="text-wrap">
+                                    <input [type]="changetype?'password':'text'" name="pass" placeholder="Password" required>
+                                    <span class="eye" (click)="viewpass()"><i [ngClass]="visible?'fa fa-eye-slash':'fa fa-eye'"></i></span><br>
+                                </div>
+                                <div class="text-wrap">
+                                    <input [type]="cchangetype?'password':'text'" name="cpass" placeholder="Confirm Password" required>
+                                    <span class="eye2" (click)="cviewpass()"><i [ngClass]="cvisible?'fa fa-eye-slash':'fa fa-eye'"></i></span>
+                                </div>
+                            </div>
+                                <div class="terms">
+                                    <input type="checkbox">  I agree to the   <a href="#" class="condition"> &nbsp; Terms & Condition</a>
+                                </div>
+                                
+                                    <button class="submit"> Sign Up </button>
+                                    <div id="account">
+                                        Already have an account? <a  (click)="toggle()" class="login">Login</a>
+                                    </div>
+                    </form>
+                </div>
+        </div>
+    </div>
+</main>
+
