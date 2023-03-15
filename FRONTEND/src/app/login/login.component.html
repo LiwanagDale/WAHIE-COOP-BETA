@@ -8,7 +8,7 @@
             <div class="form-wrap" >    
                 <form class="login-form" [@formState]="loginState">
                     <div class="wah-logo">
-                      <!--  <img src="assets/image/wahlogo.png" alt="WAH Logo"> -->
+                      <!--<img src="assets/image/wahlogo.png" alt="WAH Logo">-->
                         <p>WAH <br> Cooperative</p>
                     </div>
 
@@ -23,7 +23,7 @@
                         </div>
                         <div class="txt-wrap">
                             <input [type]="changetype?'password':'text'" minlength="8" class="input-field" id="pass" placeholder="Password" required>
-                            <span class="eye" (click)="viewpass()"><i [ngClass]="visible?'fa fa-eye-slash':'fa fa-eye'"></i></span>
+                            <span class="eye" (click)="viewpass()"><i [ngClass]="visible?'ti ti-eye-closed':'ti ti-eye'"></i></span>
                         </div>
         
                             <a href="forgot-pass" class="forgot-pass">Forgot Password?</a><br>
@@ -39,7 +39,7 @@
                     <div class="reg-wrap" [@formState3]="registerState" >
                         <form class="register-form" >
                                 
-                            <div class="whlogo"> 
+                            <div class="wahlogo"> 
                             <!-- <img src="assets/image/wahlogo.png">-->
                                 <p>WAH <br> Cooperative</p>
                             </div>
@@ -57,11 +57,11 @@
                                     </div>
                                     <div class="txt-wrap">
                                         <input [type]="changetype?'password':'text'" minlength="8" name="pass" class="input-field" id="reg-pass" placeholder="Password" required>
-                                        <span class="eye" (click)="viewpass()"><i [ngClass]="visible?'fa fa-eye-slash':'fa fa-eye'"></i></span><br>
+                                        <span class="eye" (click)="viewpass()"><i [ngClass]="visible?'ti ti-eye-closed':'ti ti-eye'"></i></span><br>
                                     </div>
                                     <div class="txt-wrap">
                                         <input [type]="cchangetype?'password':'text'" minlength="8" name="cpass" class="input-field" id="confirm-pass" placeholder="Confirm Password" required>
-                                    <span class="eye" (click)="cviewpass()"><i [ngClass]="cvisible?'fa fa-eye-slash':'fa fa-eye'"></i></span>
+                                    <span class="eye" (click)="cviewpass()"><i [ngClass]="cvisible?'ti ti-eye-closed':'ti ti-eye'"></i></span>
                                     </div>
                                 </div>
                                     <div class="account">
