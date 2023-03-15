@@ -51,19 +51,24 @@ Route::middleware(['adminDisabled'])->group(function () {
 
                 Route::post('/confirm-otp', [App\Http\Controllers\HomeController::class, 'confirmOtpForm']);
 
-                #Sms Notification
-                
-                Route::get('/send-sms-notification', [App\Http\Controllers\NotificationController::class, 'sendSmsNotification']);
-                
-                #insert data
-                Route::get('/insert',[MemberInsertController::class, 'insertform'])->name('member form');
-                Route::post('/create',[MemberInsertController::class, 'insert'])->name('member form create');
-                
-                //send sms
-                Route::get('/member_create', [App\Http\Controllers\NotificationController::class, 'member_create']);
-                Route::post('/member_create', [App\Http\Controllers\NotificationController::class, 'sendSmsNotification']);
+#Sms Notification
 
-                });
-            });
-        });
-    });
+Route::get('/send-sms-notification', [App\Http\Controllers\NotificationController::class, 'sendSmsNotification']);
+
+#insert data
+Route::get('/insert',[MemberInsertController::class, 'insertform'])->name('member form');
+Route::post('/create',[MemberInsertController::class, 'insert'])->name('member form create');
+
+ //send sms
+ Route::get('/member_create', [App\Http\Controllers\NotificationController::class, 'member_create']);
+ Route::post('/member_create', [App\Http\Controllers\NotificationController::class, 'sendSmsNotification']);
+
+ //Journal entry
+Route::get('/accounting/journalentry', [App\Http\Controllers\HomeController::class, 'display']);
+Route::post('/save', [App\Http\Controllers\HomeController::class, 'save']);
+
+
+});
+});
+});
+});

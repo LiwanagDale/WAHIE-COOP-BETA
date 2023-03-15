@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Journal; 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -79,5 +80,31 @@ class HomeController extends Controller
     
 }
 dd('error');
+}
+
+/**
+ * Show the form for creating a new resource.
+ */
+public function display()
+{
+    $journals = Journal::all();
+    return view('accounting/journalentry')->with('journals', $journals);
+}
+
+/**
+ * Store a newly created resource in storage.
+ */
+public function saveJournal(Request $request)
+{
+        $journal = new Journal; 
+        $input = $request->all();
+        
+        //$journal->journal_number = $request->input('journal_number');
+        //$journal->journal_name = $request->input('journal_name');
+        //$journal->journal_type = $request->input('journal_type');
+        $journal->fill($input)->save();
+ 
+ 
+        return redirect('/');
 }
 }

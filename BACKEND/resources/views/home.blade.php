@@ -15,6 +15,7 @@
                     @endif
                         <h1>This is Admin</h1>
                     {{ __('You are logged in!') }}
+                    <a href="./accounting/journalentry">Journal Entry</a>
                 </div>
             </div>
         </div>
