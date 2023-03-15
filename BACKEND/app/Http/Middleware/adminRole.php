@@ -18,7 +18,7 @@ class adminRole
       //will be redirected back to admin webpage when trying to access superadmin
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->role==0){
+        if(auth()->user()->role_id==0){
             return $next($request);
         }else{
             return redirect('/superadmin/home')->with('error', 'You do not have access to admin');

@@ -22,7 +22,7 @@
                
             <tbody>
                @foreach($users as $user)
-               @if ($user->role==0)
+               @if ($user->role_id==0)
                   <tr>
                      <td>{{ $user->name }}</td>
                      <td>{{ $user->email }}</td>
