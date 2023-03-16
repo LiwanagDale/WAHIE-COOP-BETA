@@ -185,7 +185,7 @@ label{
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
-    padding: 14px;
+    margin-bottom: 1rem;
     padding-left: 6.5rem;
     display: inline-block;
 }
@@ -194,7 +194,7 @@ label{
     opacity: 80%;
 }
 
-span{
+.dot{
     height: 20px;
     width: 20px;
     background-color: #bbb;
@@ -205,23 +205,25 @@ span{
     border-width: 2em;
     padding-top: .2rem;
 }
-  .dot1 {
-    margin-right: 5%;
-  }
-  .dot2 {
-    margin-right: 5%;
-  }
-  .dot3 {
-    margin-right: 5%;
-    background-color: #3F0F88;
-    color: #fff;
-    border: #3F0F88;
-  }
-  .dot4 {
-    margin-right: 5%;
-  }
 
-  span:hover{
+.line{
+    height: 0.2rem;
+    width: 4rem;
+    background-color: #bbb;
+    display: inline-block;
+    color: #fff;
+    border-width: 2em;
+    margin-bottom: 1.5rem;
+    margin-right: 0.5rem;
+    border-radius: 15%;
+
+}
+
+  .dot {
+    margin-right: 5%;
+}
+
+  .dot:hover{
     background-color: #3F0F88;
-  }
+}
   
