@@ -40,7 +40,7 @@ Route::middleware(['auth','notSuperadmin'])->group(function () {
 
 Route::middleware(['approved'])->group(function () {
         Route::get('/confirm-otp', [App\Http\Controllers\HomeController::class, 'confirmOtp'])->name('confirm-otp');  //check if code is zero
-
+        Route::post('/confirm-otp', [App\Http\Controllers\HomeController::class, 'confirmOtpForm']);
 Route::middleware(['codeZero'])->group(function () {
             Route::get('/adminDisabled', [App\Http\Controllers\HomeController::class, 'adminDisabled'])->name('adminDisabled'); //check if disabled
 
@@ -49,7 +49,7 @@ Route::middleware(['adminDisabled'])->group(function () {
 
 
 
-                Route::post('/confirm-otp', [App\Http\Controllers\HomeController::class, 'confirmOtpForm']);
+                
 
 #Sms Notification
 

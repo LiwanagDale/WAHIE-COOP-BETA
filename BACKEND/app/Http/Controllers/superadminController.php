@@ -16,11 +16,14 @@ class superadminController extends Controller
 {
     public function update(Request $request)
     {
-    
+        
         $user = user::find($request->id);
        $status = $request->status;
+
         if($user->status==1){
-            $user->status =  $status;
+        
+                $user->status = $status;
+    
         }
         elseif($user->status!=1){
             $user->status =  $status;

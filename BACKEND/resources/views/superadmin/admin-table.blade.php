@@ -22,7 +22,7 @@
                
             <tbody>
                @foreach($users as $user)
-               @if ($user->role_id==0)
+               @if ($user->role_id==1)
                   <tr>
                      <td>{{ $user->name }}</td>
                      <td>{{ $user->email }}</td>
@@ -57,7 +57,9 @@
     $(function() { 
         
             $('.toggle-class').change(function() { 
+
             var status = $(this).prop('checked') == true ? 1 : 0;  
+
             var id = $(this).data('id');  
             $.ajax({ 
      
@@ -67,7 +69,8 @@
                 data: {'status': status, 'id': id}, 
                 success: function(data){ 
                 console.log(data.success) 
-             } 
+             }
+            
           }); 
        }) 
     }); 
