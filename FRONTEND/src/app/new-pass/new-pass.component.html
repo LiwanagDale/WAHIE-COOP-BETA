@@ -10,7 +10,7 @@
                 <form>
                     <div class="wah-logo">
                         <img src="assets/image/wahlogo.png" alt="WAH Logo">
-                        <p>WAH <br> Cooperative</p>
+                        <p>WAHIE <br> Cooperative</p>
                     </div>
 
                     <div class="heading">
@@ -24,7 +24,14 @@
                             <input [type]="changetype?'password':'text'" minlength="8" class="input-field" id="pass" placeholder="Enter new password" required>
                             <div class="eye" (click)="viewpass()"><i [ngClass]="visible?'fa fa-eye-slash':'fa fa-eye'"></i></div>
                         </div>
-
+                            <div class="account">
+                                <div style="text-align:center" class="checking"></div>
+                                <span class="line 1"></span>
+                                <span class="line 2"></span>
+                                <span class="line 3"></span>
+                                <span class="line 4"></span>
+                                <label> STRONG</label>
+                             </div>
                         <div class="txt-wrap">
                             <label for="pass2"> Confirm Password</label>
                             <input [type]="cchangetype?'password':'text'"  minlength="8"  class="input-field" id="pass2" placeholder="Confirm your new password" required>
@@ -36,10 +43,10 @@
                         
                             <div class="account">
                                 <div style="text-align:center"></div>
-                                <span class="dot1">1</span>
-                                <span class="dot2">2</span>
-                                <span class="dot3">3</span>
-                                <span class="dot4">4</span>
+                                <span class="dot 1">1</span>
+                                <span class="dot 2">2</span>
+                                <span class="dot 3">3</span>
+                                <span class="dot 4">4</span>
                             </div>    
                     </div>
                 </form>
