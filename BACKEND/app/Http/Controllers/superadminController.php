@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 use App\Mail\MailOtp;
 use App\Models\EmailOtp;
 use App\Mail\enableAdmin;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 
 
 //controller for superadmin
@@ -52,7 +54,27 @@ class superadminController extends Controller
         $user->save();
         return back();
     }
+    public function fChange(Request $request)
+    {
+        $user = user::find($request->id);
+        $newPass = $request->new_password;
+        $conPass = $request->password_confirm;
+        $this->Validate($request,[
+            'new_password' => 'required|min:8|same:password_confirm'
+        ]);
 
-
+       if($newPass==$conPass){
+        $user->code = 0;
+        $user->password = hash::make($request->new_password);
+        $user->save();
+        session(['new_password' => $request->new_password]);
+        return redirect()->route('super.home');
+       }else{
+        return back()->withErrors('Password mismatch!');
+       }
+       
+    }
+   
 }
+
 ?>

@@ -34,12 +34,21 @@ class HomeController extends Controller
       
     }
 
-    public function superHome(){
+    public function superHome(){    
         return view('super-home');
     }
+    public function fChangPass()
+    { 
+        $data = user::all();
+        if(auth()->user()->code==0){
+            return redirect('super-home');
+        }else
+        return view('superadmin/first-change-password',['users' => $data]);
+    }
     
+
     public function adminDisabled(){
-        if(auth()->user()->status=='verified'){
+        if(auth()->user()->status==1){
             return redirect('home');
         }else{
             return view('adminDisabled');

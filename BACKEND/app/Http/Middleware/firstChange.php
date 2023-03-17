@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class checkVerified
+class firstChange
 {
     /**
      * Handle an incoming request.
@@ -14,13 +14,12 @@ class checkVerified
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-
-       //will redirect to disable webpage if the admin account is disabled
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->status==2){
-            return redirect()->route('approval');
+        if(auth()->user()->code==0){
+            return $next($request);
         }
-        return $next($request);
+        return redirect('/superadmin/first-change-password');
     }
-}
+    }
+

@@ -26,12 +26,20 @@ Auth::routes();
 
 //superadmin 
 Route::middleware(['auth','notAdmin'])->group(function () {
+    Route::get('/superadmin/first-change-password', [App\Http\Controllers\HomeController::class, 'fChangPass'])->name('fChangPass');
+    Route::post('/superadmin/first-change-password', [App\Http\Controllers\superadminController::class, 'fChange']);
+    Route::middleware(['fChange'])->group(function () {
+   
     Route::get('/superadmin/home', [App\Http\Controllers\HomeController::class, 'superHome'])->name('super.home');
     Route::get('/superadmin/admin-table', [App\Http\Controllers\HomeController::class, 'adminTable']);
-});
 
 Route::post('/superadmin/admin-table', [App\Http\Controllers\superadminController::class, 'update']);
 Route::get('/changeStatus', [App\Http\Controllers\superadminController::class, 'update']);
+
+});
+});
+
+
 //---------------------------------------------------------------------------------------------------------------------------
  
 //admin

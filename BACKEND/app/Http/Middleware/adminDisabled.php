@@ -19,7 +19,7 @@ class adminDisabled
      //will redirect to disable webpage if the admin account is disabled
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->status=='disabled'){
+        if(auth()->user()->status==0){
             return redirect()->route('adminDisabled');
         }
         return $next($request);
