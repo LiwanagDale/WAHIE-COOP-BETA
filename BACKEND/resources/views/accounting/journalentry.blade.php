@@ -159,12 +159,12 @@ myModal.addEventListener('shown.bs.modal', () => {
                   <input type="text" class="form-control"  name="test[`+i+`][name]">
               </td>
               <td>
-                  <button type="button" class="btn btn-outline-danger remove-input-field"><i class="bi bi-x-circle"></i></button>
+                  <button type="button" class="btn btn-outline-danger" id="remove-input-field"><i class="bi bi-x-circle"></i></button>
               </td>
           </tr>`
           );
   });
-  $(document).on('click', '.remove-input-field', function () {
+  $(document).on('click', '#remove-input-field', function () {
       $(this).parents('tr').remove();
   });
 </script>
