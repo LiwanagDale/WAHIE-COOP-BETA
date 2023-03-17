@@ -23,6 +23,7 @@ return new class extends Migration
             $table->date('birthdate');
             $table->string('address');
             $table->string('spouse')->nullable();
+            $table->string('civil_status')();
             $table->integer('tin_number');
             $table->string('occupation');
             $table->string('gender', 10);
@@ -34,6 +35,7 @@ return new class extends Migration
             $table->string('email');
             $table->integer('mobile_number');
             $table->timestamp('time_date_created');
+            $table->timestamps();
         });
     }
 

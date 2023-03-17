@@ -14,7 +14,7 @@
 <div class="container">
   <h2 class="text-center">Member Add Management</h2>
   <br>
-  {{-- <form action = "/create" method = "post" class="form-group" style="width:70%; margin-left:15%;" action="/action_page.php">
+  <form action = "/create" method = "post" class="form-group" style="width:70%; margin-left:15%;" action="/action_page.php">
 
   <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>"><input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
 
@@ -34,6 +34,8 @@
     <input type="text" class="form-control" placeholder="Address" name="address">
     <label>Spouse:</label>
     <input type="text" class="form-control" placeholder="Last Name" name="spouse">
+    <label>Spouse:</label>
+    <input type="text" class="form-control" placeholder="Last Name" name="civil_status">
     <label>TIN Number:</label>
     <input type="text" class="form-control" placeholder="Last Name" name="tin_number">
     <label>Occupation:</label>
@@ -46,8 +48,6 @@
 	</select>
     <label>Department:</label>
     <input type="text" class="form-control" placeholder="Last Name" name="department">
-    <label>Office Position:</label>
-    <input type="text" class="form-control" placeholder="Last Name" name="member_office">
     <label>Employment Status:</label>
     <input type="text" class="form-control" placeholder="Last Name" name="employment_status">
     <label>Company Name:</label>
@@ -60,26 +60,42 @@
     <input type="text" class="form-control" placeholder="Enter Email" name="email">
     <label>Mobile Number:</label>
     <input type="text" class="form-control" placeholder="Last Name" name="mobile_number"><br>
+    
+    <br>
+    <table>
+      <button type="button"  class="btn btn-primary" id = "add_benificiaries"> ADD</button>
+     <thead>
+          <tr>
+              <td></td>
+              <td></td>
+          </tr>
+      </thead>
+      <tbody class="benificiary_table">
+      </tbody>
+  </table>
+    <br>
+  
     <button type="submit"  value = "Add student" class="btn btn-primary">Submit</button>
-  </form>
-</div> --}}
+  
 
-@foreach ($members as $member)
-<td>{{ $member->first_name }}</td>
-<td>{{ $member->mobile_number }}</td>
-<td>
-<form action='/member_create'  method="POST">
-  @csrf
-  <div class="input-group" >
-      <input type="hidden" class="form-control" value={{ $member->mobile_number }} name="mobile">
-      </div>
-      <button type="submit"  class="btn btn-success">
-          <span>send</span>
-      </button>
-  </div>
-</form>
-<br>
-</td>
-@endforeach
+  </form>
+</div>
+
+<script>
+  $('#add_benificiaries').on('click', function(){
+    var html = '';
+    html+='<tr>';
+    html+=' <td class="col-6 p-2 ps-0"><input type="text" class="form-control" placeholder="Enter Member" name="member_name[]"/></td>';
+    html+='<<td ><input type="date" class="form-control" placeholder="Enter Birthdate" name="member_birthdate[]"/></td>';
+    html+='<td class="col-3 pe-2 ps-0"><input type="text" class="form-control" placeholder="Enter Relation" name="member_relation[]"/></td>';
+    html+='<td><button type="button" class="btn p-2" id="remove_benificiaries" ><i class="fa-sharp fa-regular fa-circle-xmark fw-bold text-danger fs-3"></i> Delete </button></td>';
+    html+='<tr>';
+    $('.benificiary_table').append(html);
+})
+$(document).on('click', '#remove_benificiaries', function () {
+      $(this).parents('tr').remove();
+  });
+
+</script>
 </body>
 </html>

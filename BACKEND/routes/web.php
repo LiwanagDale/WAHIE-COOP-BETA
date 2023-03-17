@@ -64,8 +64,8 @@ Route::middleware(['adminDisabled'])->group(function () {
 Route::get('/send-sms-notification', [App\Http\Controllers\NotificationController::class, 'sendSmsNotification']);
 
 #insert data
-Route::get('/insert',[MemberInsertController::class, 'insertform'])->name('member form');
-Route::post('/create',[MemberInsertController::class, 'insert'])->name('member form create');
+Route::get('/insert',[App\Http\Controllers\MemberInsertController::class, 'insertform'])->name('member form');
+Route::post('/create',[App\Http\Controllers\MemberInsertController::class, 'insert'])->name('member form create');
 
  //send sms
  Route::get('/member_create', [App\Http\Controllers\NotificationController::class, 'member_create']);
