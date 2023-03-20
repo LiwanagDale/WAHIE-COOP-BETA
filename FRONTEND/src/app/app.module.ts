@@ -9,6 +9,7 @@ import { CheckEmailComponent } from './check-email/check-email.component';
 import { NewPassComponent } from './new-pass/new-pass.component';
 import { PassDoneComponent } from './pass-done/pass-done.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { VerifyAccountComponent } from './verify-account/verify-account.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ForgotPassComponent,
     CheckEmailComponent,
     NewPassComponent,
-    PassDoneComponent
+    PassDoneComponent,
+    VerifyAccountComponent
   ],
   imports: [
     BrowserModule,

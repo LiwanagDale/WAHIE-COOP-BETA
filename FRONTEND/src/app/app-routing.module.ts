@@ -7,6 +7,7 @@ import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 import { CheckEmailComponent } from './check-email/check-email.component';
 import { NewPassComponent } from './new-pass/new-pass.component';
 import { PassDoneComponent } from './pass-done/pass-done.component';
+import { VerifyAccountComponent } from './verify-account/verify-account.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'pass-done', 
     component: PassDoneComponent 
+  },
+  {
+    path: 'verify-account',
+    component: VerifyAccountComponent
   }
 ];
 
