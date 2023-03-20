@@ -60,6 +60,22 @@ export let formState = trigger('formState', [
     transition('show <=> hide', animate('500ms ease-in-out', style({ opacity: 1, transform: 'translateX(0px)'  })))
   ])
 
+
+  export let formState6 = trigger('formState6', [
+    state('hide', style({
+      opacity: 0,
+      display: 'none',
+    })),
+    state('show', style({
+      opacity: 1,
+     
+    })),
+    transition('show <=> hide', animate('1500ms ease-in-out', style({ opacity: 0, transform: 'translateX(200px)'  })))
+  ])
+
+
+  
+
   
   export let slideleft = trigger('slideleft', [
     transition(':enter', [

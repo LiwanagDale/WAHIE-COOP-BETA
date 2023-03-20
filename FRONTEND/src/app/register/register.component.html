@@ -3,44 +3,47 @@
         <div class ="inner-box">
                 <div class="reg-wrap">
                     
-                    <form  *ngIf="isDisplayed" @slideright2>
+
+                <form class="register-form" *ngIf="isDisplayed" @slideright2>
                         
-                        <div class="whlogo"> 
-                            <img src="assets/image/wahlogo.png" alt="WAH Logo"> 
-                            <p>WAH <br> Cooperative</p>
+                    <div class="whlogo"> 
+                        <img src="assets/image/wahlogo.png" alt="WAH Logo"> 
+                        <p>WAH <br> Cooperative</p>
+                    </div>
+                    <div class="heading">
+                        <h1>Get Started</h1>
+                        <p>Create an account to login</p>
+                    </div>
+                    
+                    <div class="text_field" >
+                        <div class="text-wrap">
+                            <input type="text" name="name" id="reg-name" placeholder="Name" required> <br>
                         </div>
-                        <div class="heading">
-                            <h1>Get Started</h1>
-                            <p>Create an account to login</p>
+                        <div class="text-wrap">
+                            <input type="email" name="email" id="reg-email" placeholder="Email" required> <br>
                         </div>
-                        
-                            <div class="text_field" >
-                                <div class="text-wrap">
-                                    <input type="text" name="name" id="reg-name" placeholder="Name" required> <br>
-                                </div>
-                                <div class="text-wrap">
-                                    <input type="email" name="email" id="reg-email" placeholder="Email" required> <br>
-                                </div>
-                                <div class="text-wrap">
-                                    <input [type]="changetype?'password':'text'" minlength="8" name="pass" id="reg-pass" placeholder="Password" required>
-                                    <span class="eye" (click)="viewpass()"><i [ngClass]="visible?'ti ti-eye-closed':'ti ti-eye'"></i></span><br>
-                                </div>
-                                <div class="text-wrap">
-                                    <input [type]="cchangetype?'password':'text'" minlength="8" name="cpass" id= "con-pass" placeholder="Confirm Password" required>
-                                    <span class="eye2" (click)="cviewpass()"><i [ngClass]="cvisible?'ti ti-eye-closed':'ti ti-eye'"></i></span>
-                                </div>
+                        <div class="text-wrap">
+                            <input [type]="changetype?'password':'text'" minlength="8" name="pass" id="reg-pass" placeholder="Password" required>
+                            <span class="eye" (click)="viewpass()"><i [ngClass]="visible?'ti ti-eye-closed':'ti ti-eye'"></i></span><br>
+                        </div>
+                        <div class="text-wrap">
+                            <input [type]="cchangetype?'password':'text'" minlength="8" name="cpass" id= "con-pass" placeholder="Confirm Password" required>
+                            <span class="eye2" (click)="cviewpass()"><i [ngClass]="cvisible?'ti ti-eye-closed':'ti ti-eye'"></i></span>
+                        </div>
+                    </div>
+                            <div class="terms">
+                                <input type="checkbox">  I agree to the   <a href="#" class="condition"> &nbsp; Terms & Condition</a>
                             </div>
-                                <div class="terms">
-                                    <input type="checkbox">  I agree to the   <a href="#" class="condition"> &nbsp; Terms & Condition</a>
+                            
+                                <button class="submit"> Sign Up </button>
+                                <div class="account">
+                                    Already have an account? <a   href="login">Login</a>
                                 </div>
-                                
-                                    <button class="submit"> Sign Up </button>
-                                    <div id="account">
-                                        Already have an account? <a  (click)="toggle()" href="login">Login</a>
-                                    </div>
-                    </form>
-                </div>
-            <div class="vector" *ngIf="isDisplayed" @slideleft2 ><img src="assets/image/login.png "  ></div>
+                </form>
+            </div>    
+    
+
+            <div class="reg-vector" *ngIf="isDisplayed" @slideleft2 ><img src="assets/image/login.png " class="register"  ></div>
 
         </div>
     </div>
