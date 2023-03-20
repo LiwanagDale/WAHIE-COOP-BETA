@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, ViewEncapsulation, Inject} from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { transition, state, trigger, animate, style } from '@angular/animations';
+import { slideleft2, slideright2 } from '../animation';
 
 
 @Component({
@@ -8,25 +9,8 @@ import { transition, state, trigger, animate, style } from '@angular/animations'
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
   animations: [
-    trigger('slideleft', [
-      transition(':enter', [
-        style({Transform: 'translateX(-100%)'}),
-        animate('1s')
-      ]),
-      transition(':leave', [
-        animate('1s', style({transform: 'translateX(100%)'}))
-      ])
-    ]),
-
-    trigger('slideright', [
-      transition(':enter', [
-        style({Transform: 'translateX(100%)'}),
-        animate('1s')
-      ]),
-      transition(':leave', [
-        animate('1s', style({transform: 'translateX(-100%)'}))
-      ])
-    ]),
+    slideleft2,
+    slideright2
   ],
   encapsulation: ViewEncapsulation.None,
 
@@ -46,6 +30,10 @@ export class RegisterComponent implements OnInit, OnDestroy  {
     return this.state == 'register'?'show':'hide';
   }
   
+  isDisplayed: boolean = true;
+  toggleDiv(){
+    this.isDisplayed = this.isDisplayed? false:true;
+  }
   
   visible:boolean = true;
   changetype:boolean = true;
@@ -53,6 +41,8 @@ export class RegisterComponent implements OnInit, OnDestroy  {
     this.visible = !this.visible
     this.changetype = !this.changetype
   }
+
+  
   cvisible:boolean = true;
   cchangetype:boolean = true;
   cviewpass(){

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, ViewEncapsulation, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { transition, state, trigger, animate, style } from '@angular/animations';
-import { formState, formState2, formState3, formState4, formState5, fade } from '../animation';
+import { formState, formState2, formState3, formState4, formState5, slideleft, slideright } from '../animation';
 
 declare function clearInputField(): void;
 
@@ -15,7 +15,8 @@ declare function clearInputField(): void;
     formState3,
     formState4,
     formState5,
-    fade
+    slideleft,
+    slideright
 
     /**trigger('formState', [
       state('hide', style({

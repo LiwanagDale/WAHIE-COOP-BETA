@@ -60,13 +60,69 @@ export let formState = trigger('formState', [
     transition('show <=> hide', animate('500ms ease-in-out', style({ opacity: 1, transform: 'translateX(0px)'  })))
   ])
 
-  export let fade = trigger('fade', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate(1000, style({ opacity: 1 }))
-      ]),
-      transition(':leave', [
-        style({ opacity: 1 }),
-        animate(1000, style({ opacity: 0 }))
-      ])
-    ])
+  
+  export let slideleft = trigger('slideleft', [
+    transition(':enter', [
+      style({ opacity: 1, transform: 'translateX(-420px)'}),
+      animate(
+        '1200ms ease-in-out',
+        style({ opacity: 1, transform: 'translateY(0)'})
+      ),
+    ]),
+    transition(':leave', [
+      animate(
+        '1200ms ease-in-out',
+        style({ opacity: 0, transform: 'translateX(-230px)'})
+      ),
+    ]),
+  ])
+
+  
+  export let slideright = trigger('slideright', [ 
+    transition(':enter', [
+      style({ opacity: 0, transform: 'translateX(530px)'}),
+      animate(
+        '1200ms ease-in-out',
+        style({ opacity: 1, transform: 'translateY(0)'})
+      ),
+    ]),
+    transition(':leave', [
+      animate(
+        '1200ms ease-in-out',
+        style({ opacity: 0, transform: 'translateX(230px)'})
+      ),
+    ]),
+  ])
+
+
+  export let slideleft2 = trigger('slideleft2', [
+    transition(':enter', [
+      style({ opacity: 1, transform: 'translateX(420px)'}),
+      animate(
+        '1200ms ease-in-out',
+        style({ opacity: 1, transform: 'translateY(0)'})
+      ),
+    ]),
+    transition(':leave', [
+      animate(
+        '1200ms ease-in-out',
+        style({ opacity: 0, transform: 'translateX(230px)'})
+      ),
+    ]),
+  ])
+
+  export let slideright2 = trigger('slideright2', [ 
+    transition(':enter', [
+      style({ opacity: 0, transform: 'translateX(-530px)'}),
+      animate(
+        '1200ms ease-in-out',
+        style({ opacity: 1, transform: 'translateY(0)'})
+      ),
+    ]),
+    transition(':leave', [
+      animate(
+        '1200ms ease-in-out',
+        style({ opacity: 0, transform: 'translateX(-230px)'})
+      ),
+    ]),
+  ])

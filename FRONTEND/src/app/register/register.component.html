@@ -1,13 +1,12 @@
 <main> 
     <div class="layout" >
         <div class ="inner-box">
-            <div class="vector" ><img src="assets/image/register.png " ></div>
                 <div class="reg-wrap">
                     
-                    <form [@formState]="registerState">
+                    <form  *ngIf="isDisplayed" @slideright2>
                         
                         <div class="whlogo"> 
-                            <img src="assets/image/wahlogo.png">
+                            <img src="assets/image/wahlogo.png" alt="WAH Logo"> 
                             <p>WAH <br> Cooperative</p>
                         </div>
                         <div class="heading">
@@ -17,18 +16,18 @@
                         
                             <div class="text_field" >
                                 <div class="text-wrap">
-                                    <input type="text" name="name" placeholder="Name" required> <br>
+                                    <input type="text" name="name" id="reg-name" placeholder="Name" required> <br>
                                 </div>
                                 <div class="text-wrap">
-                                    <input type="email" name="email" placeholder="Email" required> <br>
+                                    <input type="email" name="email" id="reg-email" placeholder="Email" required> <br>
                                 </div>
                                 <div class="text-wrap">
-                                    <input [type]="changetype?'password':'text'" name="pass" placeholder="Password" required>
-                                    <span class="eye" (click)="viewpass()"><i [ngClass]="visible?'fa fa-eye-slash':'fa fa-eye'"></i></span><br>
+                                    <input [type]="changetype?'password':'text'" minlength="8" name="pass" id="reg-pass" placeholder="Password" required>
+                                    <span class="eye" (click)="viewpass()"><i [ngClass]="visible?'ti ti-eye-closed':'ti ti-eye'"></i></span><br>
                                 </div>
                                 <div class="text-wrap">
-                                    <input [type]="cchangetype?'password':'text'" name="cpass" placeholder="Confirm Password" required>
-                                    <span class="eye2" (click)="cviewpass()"><i [ngClass]="cvisible?'fa fa-eye-slash':'fa fa-eye'"></i></span>
+                                    <input [type]="cchangetype?'password':'text'" minlength="8" name="cpass" id= "con-pass" placeholder="Confirm Password" required>
+                                    <span class="eye2" (click)="cviewpass()"><i [ngClass]="cvisible?'ti ti-eye-closed':'ti ti-eye'"></i></span>
                                 </div>
                             </div>
                                 <div class="terms">
@@ -37,10 +36,12 @@
                                 
                                     <button class="submit"> Sign Up </button>
                                     <div id="account">
-                                        Already have an account? <a  (click)="toggle()" class="login">Login</a>
+                                        Already have an account? <a  (click)="toggle()" href="login">Login</a>
                                     </div>
                     </form>
                 </div>
+            <div class="vector" *ngIf="isDisplayed" @slideleft2 ><img src="assets/image/login.png "  ></div>
+
         </div>
     </div>
 </main>
