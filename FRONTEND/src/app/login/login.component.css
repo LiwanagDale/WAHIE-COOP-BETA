@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+a:link, a:active, a:visited{
+  color: #3F0F88;
+  text-decoration: none;
+  background-color: transparent;
+
+}
 
 main{
   width: 100%;
@@ -95,7 +101,7 @@ form.register-form{
 }
 
 .wah-logo img{
-  width: 50px;
+  width: 40px;
   margin-right: 0.1rem;
 }
 
@@ -197,54 +203,9 @@ form.register-form{
   opacity: 80%;
 }
 
+
 /*REGISTER*/
 
-a:link, a:active, a:visited{
-  color: #3F0F88;
-  text-decoration: none;
-  background-color: transparent;
-
-}
-
-.reg-wrap {
-  position: absolute;
-  height: 100%;
-  width: 45%;
-  top: 0;
-  right: 0;
-}
-
-input[type=checkbox]{
-  transform: translate(-30%, 20%);
-  display: flexbox;
-  box-sizing: border-box; 
-  width: 17px;
-  height: 17px;
-  border-radius: -1.2em;
-}
-
-.terms{
-  font-family: Poppins-Medium;
-  color: #707070;
-  font-size: 0.9rem;
-  text-align: center;
-}
-
-.reg-vector{
-  position: absolute;
-  height: 100%;
-  width: 55%;
-  right: 45%;
-  top: 0;
-  background-color: #0099FF;
-  border-radius: 2rem;
-}
-
-
-.reg-vector img{
-  width: 100%;
-  height: 100%;
-}
 
 @media (max-width: 850px) {
   .box {

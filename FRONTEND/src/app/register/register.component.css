@@ -90,12 +90,12 @@ form {
     font-weight: 700;
     line-height: 100%;
     color: #3F0F88;
-    transform: translate(-3%, -10%);
+    
 }
 
 .whlogo img {
     width: 40px;
-    margin: 0.3rem;
+    margin-left: 0.1rem;
 }
 
 .heading h1, p {
@@ -215,6 +215,7 @@ input[type=checkbox]{
   display: inline;
   text-align: center;
 }
+
 
 @media (max-width: 850px) {
   .layout {
