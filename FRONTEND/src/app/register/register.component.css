@@ -15,7 +15,7 @@ a:link, a:active, a:visited{
 
 body, input{
     font-family: Poppins;
-    overflow: hidden;
+
 }
 
 main {
@@ -168,7 +168,7 @@ input[type=checkbox]{
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 1rem;
+    font-size: 0.9rem;
     
 }
  .submit:hover{
@@ -208,11 +208,12 @@ input[type=checkbox]{
     opacity: 80%;
 }
 
-#account{
-    font-family: Poppins-Medium;
-    color: #707070;
-    font-size: 0.9rem;
-    text-align: center;
+.account{
+  font-family: Poppins-Medium;
+  color: #707070;
+  font-size: .9rem;
+  display: inline;
+  text-align: center;
 }
 
 @media (max-width: 850px) {

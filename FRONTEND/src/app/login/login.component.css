@@ -320,7 +320,7 @@ input[type=checkbox]{
   }
 }
 
-@media (max-width: 330px) {
+@media (max-width: 830px) {
   main {
     padding: 1rem;
   }
