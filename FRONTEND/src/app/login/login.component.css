@@ -208,6 +208,9 @@ form.register-form{
 
 
 @media (max-width: 850px) {
+  .forgot-pass{
+    margin-left: 1em;
+  }
   .box {
     height: auto;
     max-width: 550px;
@@ -269,11 +272,6 @@ form.register-form{
     width: 0%;
     padding: .5rem .5rem;
     display: flex;
-  }
-
-
-  .images-wrapper {
-    display: none;
   }
 
   .text-slider {

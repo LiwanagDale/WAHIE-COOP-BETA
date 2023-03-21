@@ -19,10 +19,10 @@
                 
                     <div class="txt-field">
                         <div class="txt-wrap">
-                            <input type="email" minlength="4" class="input-field" id="email" placeholder="Email" required><br>
+                            <input type="email" minlength="4" class="input-field" id="log-email" placeholder="Email" required><br>
                         </div>
                         <div class="txt-wrap">
-                            <input [type]="changetype?'password':'text'" minlength="8" class="input-field" id="pass" placeholder="Password" required>
+                            <input [type]="changetype?'password':'text'" minlength="8" class="input-field" id="log-pass" placeholder="Password" required>
                             <span class="eye" (click)="viewpass()"><i [ngClass]="visible?'ti ti-eye-closed':'ti ti-eye'"></i></span>
                         </div>
         
@@ -30,7 +30,7 @@
                             <button class="submit">Login</button>
 
                             <p class="account">
-                                Don't have an account? <a   (click)="toggle()" onclick="clearInputField()"   href="register">Sign Up</a>
+                                Don't have an account? <a   (click)="toggle()" onclick="clearInputField()" href="register">Sign Up</a>
                             </p>
                     </div>
                 </form>

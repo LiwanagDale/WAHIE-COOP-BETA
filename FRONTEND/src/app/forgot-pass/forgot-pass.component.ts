@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, ViewEncapsulation, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { formState, formState5, formState6} from '../animation';
+import { formState, formState5, formState6, slider, slideright} from '../animation';
 
 
 @Component({
@@ -8,7 +8,7 @@ import { formState, formState5, formState6} from '../animation';
   templateUrl: './forgot-pass.component.html',
   styleUrls: ['./forgot-pass.component.css'],
   animations:[
-    formState, formState5, formState6
+    formState, formState5, formState6,slideright, slider
   ],
   encapsulation: ViewEncapsulation.None,
 })
@@ -29,6 +29,11 @@ export class ForgotPassComponent  implements OnInit, OnDestroy {
     return this.state == 'check-email'?'show':'hide';
   }
 
+
+  isDisplayed: boolean = true;
+  toggleDiv(){
+    this.isDisplayed = this.isDisplayed? false:true;
+  }
 
   constructor(@Inject(DOCUMENT) private _document: any){}
 

@@ -172,8 +172,7 @@ input[type=checkbox]{
     
 }
  .submit:hover{
-    background-color: #0f1d88;
-    opacity: 90%;
+  opacity: 80%;
 }
 
 .terms{
