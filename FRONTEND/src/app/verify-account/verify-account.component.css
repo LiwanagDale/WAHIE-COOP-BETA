@@ -77,6 +77,7 @@ form{
     display: flex;
     align-items: center;
     margin-top: 0%;
+    transform: translate(-3.5%, -10%);
 }
 
 .wah-logo p{
@@ -90,8 +91,7 @@ form{
 
 .wah-logo img{
   width: 50px;
-  margin-left: -3%;
-  margin-top: -5%;
+  margin: 0.1rem;
 }
 
 .heading h1, p{
@@ -111,10 +111,10 @@ form{
   display: inline;
 }
 
-.txt-wrap{
+.txt-field{
   position: relative;
   height: 30px;
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
 }
 
 .txt-wrap h5{
@@ -138,9 +138,7 @@ form{
   font-size: 0.8rem;
   color: #3F0F88;
   text-decoration: none;
-  transition: 0.3s;
-  padding-left: 13.8rem;
-  margin-right: 0%;
+  padding-left: 14.1rem;
 }
 
 .resend-code:hover{

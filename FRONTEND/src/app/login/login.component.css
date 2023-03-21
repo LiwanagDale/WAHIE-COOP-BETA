@@ -63,7 +63,7 @@ main{
   height: 100%;
 }
 
-form{
+form {
   max-width: 310px;
   width: 100%;
   margin: 0 auto;
@@ -83,6 +83,7 @@ form.register-form{
     display: flex;
     align-items: center;
     margin-top: 5px;
+    transform: translate(-2.5%, -10%);
 }
 
 .wah-logo p{
@@ -96,7 +97,7 @@ form.register-form{
 
 .wah-logo img{
   width: 50px;
-  margin-right: 0.1rem;
+  margin: -0.1rem;
 }
 
 .heading h1, p{
@@ -182,6 +183,10 @@ form.register-form{
   color: #707070;
   font-size: 0.9rem;
   text-align: center;
+}
+
+.account a:hover{
+  opacity: 80%;
 }
 
 .toggle{

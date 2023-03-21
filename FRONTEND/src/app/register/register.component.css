@@ -94,8 +94,8 @@ form {
 }
 
 .whlogo img {
-    width: 40px;
-    margin: 0.3rem;
+    width: 50px;
+    margin: 0.1rem;
 }
 
 .heading h1, p {
@@ -134,17 +134,21 @@ input:hover{
     outline: #3F0F88;
 }
   .eye{
+    content: '\ea9a';
     position: absolute;
-    right: 8%;
-    bottom: -15%;
+    left: 87%;
+    bottom: -35%;
     cursor: pointer;
+    font-size: 1.3rem;
 }
 
 .eye2{
+    content: '\ea9a';
     position: absolute;
-    right: 8%;
-    bottom: -20%;
+    left: 87%;
+    bottom: -35%;
     cursor: pointer;
+    font-size: 1.3rem;
 }
 
 input[type=checkbox]{
@@ -157,7 +161,7 @@ input[type=checkbox]{
 }
 
 .submit{
-
+  transition: 0.3s;
     padding: 12px 20px ;
     transform: translate(0%, -30%);
     font-family: Poppins-Medium;
@@ -172,8 +176,7 @@ input[type=checkbox]{
     
 }
  .submit:hover{
-    background-color: #0f1d88;
-    opacity: 90%;
+    opacity: 80%;
 }
 
 .terms{
@@ -181,12 +184,11 @@ input[type=checkbox]{
     padding: 15px 10px 15px;
     font-family: Poppins-Medium;
     font-size: 0.8rem;
-    color: #3F0F88;
+    color: #707070;
     text-decoration: none;
     transition: 0.3s;
 }
 .condition:hover{
-    color: #0f1d88;
     opacity: 80%;
     
 }
@@ -214,6 +216,11 @@ input[type=checkbox]{
   font-size: .9rem;
   display: inline;
   text-align: center;
+}
+
+.account a:hover{
+  opacity: 80%;
+  transition: 0.3s;
 }
 
 @media (max-width: 850px) {
