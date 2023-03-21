@@ -172,6 +172,7 @@ form{
     transition: 0.3s;
     padding-left: .5rem;
     color: #3F0F88;
+    cursor: pointer;
 }
 
 .back{

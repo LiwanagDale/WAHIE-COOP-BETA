@@ -6,12 +6,10 @@ export let formState = trigger('formState', [
       display: 'none',
     })),
     state('show', style({
-      opacity: 1,
-     
+      opacity: 1, 
     })),
     transition('show <=> hide', animate('1500ms ease-in-out', style({ opacity: 0, transform: 'translateX(200px)'  })))
   ])
-
   export let formState2 =  trigger('formState2', [
     state('hide', style({
       opacity: 1,
@@ -60,7 +58,6 @@ export let formState = trigger('formState', [
     transition('show <=> hide', animate('500ms ease-in-out', style({ opacity: 1, transform: 'translateX(0px)'  })))
   ])
 
-
   export let formState6 = trigger('formState6', [
     state('hide', style({
       opacity: 0,
@@ -72,10 +69,6 @@ export let formState = trigger('formState', [
     })),
     transition('show <=> hide', animate('1500ms ease-in-out', style({ opacity: 0, transform: 'translateX(200px)'  })))
   ])
-
-
-  
-
   
   export let slideleft = trigger('slideleft', [
     transition(':enter', [
@@ -139,6 +132,22 @@ export let formState = trigger('formState', [
       animate(
         '1200ms ease-in-out',
         style({ opacity: 0, transform: 'translateX(-230px)'})
+      ),
+    ]),
+  ])
+
+  export let slider = trigger('slider', [ 
+    transition(':enter', [
+      style({ opacity: 0, transform: 'translateX(0px)'}),
+      animate(
+        '1200ms ease-in-out',
+        style({ opacity: 1, transform: 'translateY(0)'})
+      ),
+    ]),
+    transition(':leave', [
+      animate(
+        '1200ms ease-in-out',
+        style({ opacity: 0, transform: 'translateX(0px)'})
       ),
     ]),
   ])

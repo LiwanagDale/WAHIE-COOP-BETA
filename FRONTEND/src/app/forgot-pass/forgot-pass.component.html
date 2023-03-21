@@ -6,7 +6,7 @@
 
 
             <div class="form-wrap">    
-                <form [@formState6]="forgotpassState">
+                <form *ngIf="isDisplayed" @slideright>
                     <div class="wah-logo">
                         <img src="assets/image/wahlogo.png" alt="WAH Logo">
                         <p>WAH <br> Cooperative</p>
@@ -20,8 +20,8 @@
                     <div class="txt-field">
                         <div class="txt-wrap">
                             <input type="email"  class="input-field" id="email" placeholder="Enter your email" required><br>
-                            <button (click)="toggle()" class="reset">Reset Password</button>
-                            <a href="" class="signup">Back to log in</a>
+                            <a (click)="toggle()" class="reset" href="check-email">Reset Password</a>
+                            <a href="login" class="signup">Back to log in</a>
                         </div>
                              
                     </div>
@@ -35,39 +35,12 @@
                 </form>
                 
             </div>
-                <div class="form-wrap" [@formState6]="checkemailState">    
-                    <form>
-                        <div class="wah-logo">
-                            <img src="assets/image/wahlogo.png" alt="WAH Logo">
-                            <p>WAH <br> Cooperative</p>
-                        </div>
-    
-                        <div class="heading">
-                            <h1>Check your email</h1>
-                            <p>We sent a password reset link to
-                                sample@gmail.com</p>
-                        </div>
-                    
-                        <div class="txt-field">
-                            <div class="txt-wrap">
-                                <a (click)="toggle()" class="reset">Open gmail</a>
-                                
-                               <p class="did">Didn't receive the email?<a href="login" class="signup"> Click to resend</a></p><br>
-                                <a href="login" class="signup">Back to log in</a>
-                            </div>
-                           
-                               
-                        </div>
-                    </form>
+                
+                <div class="login-vector" >
+                    <img src="assets/image/Email-amico.png" class="login" *ngIf="isDisplayed" @slider>
                     
                 </div>
-                <div class="login-vector" [@formState5]="forgotpassState">
-                    <img src="assets/image/Email-amico.png" class="login">
-                    
-                </div>
-                <div class="login-vector" [@formState5]="checkemailState">
-                    <img src="assets/image/Email-amico.png" class="login">
-                </div>
+                
 
         </div>
     </div>
