@@ -206,19 +206,6 @@ label{
     padding-top: .2rem;
 }
 
-.line{
-    height: 0.2rem;
-    width: 4rem;
-    background-color: #bbb;
-    display: inline-block;
-    color: #fff;
-    border-width: 2em;
-    margin-bottom: 1.5rem;
-    margin-right: 0.5rem;
-    border-radius: 15%;
-
-}
-
   .dot {
     margin-right: 5%;
 }

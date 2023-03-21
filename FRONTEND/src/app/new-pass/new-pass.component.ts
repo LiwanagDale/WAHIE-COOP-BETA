@@ -1,14 +1,25 @@
 import { Component, OnInit, OnDestroy, ViewEncapsulation, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { slider, slideright} from '../animation';
 
 
 @Component({
   selector: 'app-new-pass',
   templateUrl: './new-pass.component.html',
   styleUrls: ['./new-pass.component.css'],
+  animations:[
+    slideright, slider
+  ],
   encapsulation: ViewEncapsulation.None,
 })
 export class NewPassComponent implements OnInit, OnDestroy {
+
+  isDisplayed: boolean = true;
+  toggleDiv(){
+    this.isDisplayed = this.isDisplayed? false:true;
+  }
+
+  
   visible:boolean = true;
   changetype:boolean = true;
   viewpass(){
