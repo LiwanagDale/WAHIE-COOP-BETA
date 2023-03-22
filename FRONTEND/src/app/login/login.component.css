@@ -79,12 +79,7 @@ form {
   justify-content: space-evenly;
 
 }
-/**
-form.register-form{
-  opacity: 0;
-  pointer-events: none;
-}
-**/
+
 .wah-logo{
     display: flex;
     align-items: center;

@@ -90,12 +90,12 @@ form {
     font-weight: 700;
     line-height: 100%;
     color: #3F0F88;
-    
+    transform: translate(-2.5%, -10%);
 }
 
 .whlogo img {
     width: 50px;
-    margin: 0.1rem;
+    margin: -0.1rem;
 }
 
 .heading h1, p {
