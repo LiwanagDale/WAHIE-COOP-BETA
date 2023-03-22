@@ -64,7 +64,7 @@ form{
     max-width: 310px;
     width: 100%;
     margin: 0 auto;
-    height: 110%;
+    height: 30rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -73,8 +73,8 @@ form{
 .wah-logo{
     display: flex;
     align-items: center;
-    font-size: 1.1rem;
     margin-top: 5px;
+    transform: translate(-2.5%, -10%);
 }
 
 .wah-logo p{
@@ -87,8 +87,8 @@ form{
 }
 
 .wah-logo img{
-    width: 40px;
-    margin: 0.3rem;
+    width: 50px;
+    margin: -0.1rem;
 }
 
 .heading h1, p{
@@ -153,16 +153,14 @@ span{
     display: inline-block;
     color: #fff;
     font-size: 10px;
-    border-width: 2em;
     padding-top: .2rem;
+    transform: translate(50%, 50%);
 }
   .dot1 {
     margin-right: 5%;
-
   }
   .dot2 {
     margin-right: 5%;
-
   }
   .dot3 {
     margin-right: 5%;
@@ -171,9 +169,11 @@ span{
     margin-right: 5%;
     background-color: #3F0F88;
     color: #fff;
+    border: #3F0F88;
   }
 
   span:hover{
-    background-color: #3F0F88;
+    text-decoration: none;
+    cursor:context-menu;
   }
   
