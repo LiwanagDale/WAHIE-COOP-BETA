@@ -11,6 +11,7 @@ import { PassDoneComponent } from './pass-done/pass-done.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VerifyAccountComponent } from './verify-account/verify-account.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { VerifyAccountComponent } from './verify-account/verify-account.componen
     CheckEmailComponent,
     NewPassComponent,
     PassDoneComponent,
-    VerifyAccountComponent
+    VerifyAccountComponent,
+
   ],
   imports: [
     BrowserModule,
