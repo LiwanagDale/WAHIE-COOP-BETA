@@ -21,13 +21,13 @@
                         <div class="txt-wrap">
                             <label for="pass"> New Password</label>
                             <input [type]="changetype?'password':'text'" minlength="8" class="input-field" id="pass" placeholder="Enter new password" required>
-                            <div class="eye" (click)="viewpass()"><i [ngClass]="visible?'fa fa-eye-slash':'fa fa-eye'"></i></div>
+                            <span class="eye" (click)="viewpass()"><i [ngClass]="visible?'ti ti-eye-closed':'ti ti-eye'"></i></span><br>
                         </div>
                             
                         <div class="txt-wrap">
                             <label for="pass2"> Confirm Password</label>
                             <input [type]="cchangetype?'password':'text'"  minlength="8"  class="input-field" id="pass2" placeholder="Confirm your new password" required>
-                            <div class="eye2" (click)="cviewpass()"><i [ngClass]="cvisible?'fa fa-eye-slash':'fa fa-eye'"></i></div>
+                            <span class="eye2" (click)="cviewpass()"><i [ngClass]="cvisible?'ti ti-eye-closed':'ti ti-eye'"></i></span>
                         </div>
                         
                             <a href="pass-done" class="save">Save new password</a>
