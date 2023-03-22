@@ -61,6 +61,7 @@ main{
 }
 
 form{
+    background-color: #707070;
     max-width: 310px;
     width: 100%;
     margin: 0 auto;
@@ -73,8 +74,8 @@ form{
 .wah-logo{
     display: flex;
     align-items: center;
-    font-size: 1.1rem;
     margin-top: 5px;
+    transform: translate(-2.5%, -10%);
 }
 
 .wah-logo p{
@@ -87,8 +88,8 @@ form{
 }
 
 .wah-logo img{
-    width: 40px;
-    margin: 0.3rem;
+    width: 50px;
+    margin: -0.1rem;
 }
 
 .heading h1, p{
