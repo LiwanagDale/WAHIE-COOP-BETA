@@ -21,13 +21,13 @@
                         <div class="txt-wrap">
                             <label for="pass"> New Password</label>
                             <input [type]="changetype?'password':'text'" minlength="8" class="input-field" id="pass" placeholder="Enter new password" required>
-                            <span class="eye" (click)="viewpass()"><i [ngClass]="visible?'ti ti-eye-closed':'ti ti-eye'"></i></span><br>
+                            <div class="eye" (click)="viewpass()"><i [ngClass]="visible?'ti ti-eye-closed':'ti ti-eye'"></i></div><br>
                         </div>
                             
                         <div class="txt-wrap">
                             <label for="pass2"> Confirm Password</label>
                             <input [type]="cchangetype?'password':'text'"  minlength="8"  class="input-field" id="pass2" placeholder="Confirm your new password" required>
-                            <span class="eye2" (click)="cviewpass()"><i [ngClass]="cvisible?'ti ti-eye-closed':'ti ti-eye'"></i></span>
+                            <div class="eye2" (click)="cviewpass()"><i [ngClass]="cvisible?'ti ti-eye-closed':'ti ti-eye'"></i></div>
                         </div>
                         
                             <a href="pass-done" class="save">Save new password</a>
@@ -47,10 +47,10 @@
                 </form>
                         <div class="account">
                             <div style="text-align:center"></div>
-                            <span class="dot1">1</span>
-                            <span class="dot2">2</span>
-                            <span class="dot3">3</span>
-                            <span class="dot4">4</span>
+                            <span class="dot1" *ngIf="isDisplayed" @slider>1</span>
+                            <span class="dot2" *ngIf="isDisplayed" @slider>2</span>
+                            <span class="dot3" *ngIf="isDisplayed" @slider>3</span>
+                            <span class="dot4" *ngIf="isDisplayed" @slider>4</span>
                         </div> 
             </div>
 
