@@ -231,11 +231,6 @@ form {
     height: auto;
   }
 
-  .reg-wrap {
-    position: revert;
-    width: 100%;
-    height: auto;
-  }
 
   form {
     max-width: revert;
@@ -266,13 +261,7 @@ form {
     padding: .2rem .1rem;
     display: flex;
   }
-  .reg-vector {
-    position: revert;
-    height: auto;
-    width: 0%;
-    padding: .5rem .5rem;
-    display: flex;
-  }
+
 
   .text-slider {
     width: 100%;
@@ -295,12 +284,10 @@ form {
   .login-vector {
     padding: 1rem 1rem;
     border-radius: 1.6rem;
-  }
-  .reg-vector {
-    padding: 1rem 1rem;
-    border-radius: 1.6rem;
+    visibility: hidden;
   }
 
+ 
   .txt-wrap {
     margin-bottom: 1rem;
   }
