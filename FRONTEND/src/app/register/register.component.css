@@ -288,13 +288,7 @@ input[type=checkbox]{
     transform: translateX(0%);
   }
 
-  .login-vector {
-    position: revert;
-    height: auto;
-    width: 0%;
-    padding: .2rem .1rem;
-    display: flex;
-  }
+
   .reg-vector {
     position: revert;
     height: auto;
@@ -326,13 +320,11 @@ input[type=checkbox]{
     padding: 1rem;
   }
 
-  .login-vector {
-    padding: 1rem 1rem;
-    border-radius: 1.6rem;
-  }
+
   .reg-vector {
     padding: 1rem 1rem;
     border-radius: 1.6rem;
+    visibility: collapse;
   }
 
   .txt-wrap {
