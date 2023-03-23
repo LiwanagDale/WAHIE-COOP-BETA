@@ -188,6 +188,22 @@ input[type=checkbox]{
     text-decoration: none;
     transition: 0.3s;
 }
+
+  /**CHECKBOX**/
+  .check{
+    position: absolute;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s;
+    color: #3F0F88;
+  }
+  
+  .terms p{
+    font-size: 0.8rem;
+    margin-top: 5.5px;
+    margin-left: 25px;
+  }
+
 .condition:hover{
     opacity: 80%;
     

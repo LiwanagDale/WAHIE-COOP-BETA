@@ -33,9 +33,10 @@
                             <span class="eye2" (click)="cviewpass()"><i [ngClass]="cvisible?'ti ti-eye-closed':'ti ti-eye'"></i></span>
                         </div>
                     </div>
-                            <div class="terms">
-                                <input type="checkbox"> I agree to the <a href="#" class="condition"> Terms & Condition</a>
-                            </div>
+                        <div class="terms">
+                            <span class="check" (click)="checkBox()"><i [ngClass]="checkvisible?'ti ti-square':'ti ti-square-check-filled'"></i></span>  
+                                <p>I agree to the <a href="#" class="condition"> Terms & Condition</a></p>
+                        </div>
                             
                                 <button class="submit"> Sign Up </button>
                                 <p class="account">

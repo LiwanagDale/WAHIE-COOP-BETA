@@ -50,6 +50,11 @@ export class RegisterComponent implements OnInit, OnDestroy  {
     this.cchangetype = !this.cchangetype
   }
 
+  checkvisible:boolean = true;
+  checkBox(){
+    this.checkvisible = !this.checkvisible
+  }
+
   constructor(@Inject(DOCUMENT) private _document: any){}
 
   ngOnInit() {

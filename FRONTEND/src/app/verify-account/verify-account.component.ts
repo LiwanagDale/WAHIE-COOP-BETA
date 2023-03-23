@@ -22,13 +22,9 @@ export class VerifyAccountComponent implements OnInit, OnDestroy {
 
     /**MODAL*/
     showModal = -1;
-
     show(index: number){
       this.showModal = index;
-    }
-
-    close(){
-      this.showModal = -1;
+      
     }
 
 }
