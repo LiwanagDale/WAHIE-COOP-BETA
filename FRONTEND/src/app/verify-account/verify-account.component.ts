@@ -7,10 +7,10 @@ import { DOCUMENT } from '@angular/common';
   styleUrls: ['./verify-account.component.css'],
   encapsulation: ViewEncapsulation.None,
 })
+
 export class VerifyAccountComponent implements OnInit, OnDestroy {
 
-  constructor(@Inject(DOCUMENT) private _document: any){  
-  }
+  constructor(@Inject(DOCUMENT) private _document: any){}
   
     ngOnInit() {
       this._document.body.classList.add('body');
@@ -24,7 +24,6 @@ export class VerifyAccountComponent implements OnInit, OnDestroy {
     showModal = -1;
     show(index: number){
       this.showModal = index;
-      
     }
 
 }

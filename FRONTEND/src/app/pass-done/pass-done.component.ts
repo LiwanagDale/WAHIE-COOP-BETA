@@ -6,17 +6,17 @@ import { slider, slideright} from '../animation';
   selector: 'app-pass-done',
   templateUrl: './pass-done.component.html',
   styleUrls: ['./pass-done.component.css'],
-  animations:[
-    slideright, slider
-  ],
+  animations:[slideright, slider],
   encapsulation: ViewEncapsulation.None,
 })
+
 export class PassDoneComponent implements OnInit, OnDestroy {
 
   isDisplayed: boolean = true;
   toggleDiv(){
     this.isDisplayed = this.isDisplayed? false:true;
   }
+  
   constructor(@Inject(DOCUMENT) private _document: any){}
 
   ngOnInit() {

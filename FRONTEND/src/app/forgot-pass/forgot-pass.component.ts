@@ -7,19 +7,16 @@ import { formState, formState5, formState6, slider, slideright} from '../animati
   selector: 'app-forgot-pass',
   templateUrl: './forgot-pass.component.html',
   styleUrls: ['./forgot-pass.component.css'],
-  animations:[
-    formState, formState5, formState6,slideright, slider
-  ],
+  animations:[formState, formState5, formState6,slideright, slider],
   encapsulation: ViewEncapsulation.None,
 })
+
 export class ForgotPassComponent  implements OnInit, OnDestroy {
 
   state = 'forgot-pass';
-
   toggle() {
     this.state = this.state == 'forgot-pass'?'check-email':'new-pass';
   }
-
 
   get forgotpassState() {
     return this.state == 'forgot-pass'?'show':'hide';
@@ -28,7 +25,6 @@ export class ForgotPassComponent  implements OnInit, OnDestroy {
   get checkemailState() {
     return this.state == 'check-email'?'show':'hide';
   }
-
 
   isDisplayed: boolean = true;
   toggleDiv(){

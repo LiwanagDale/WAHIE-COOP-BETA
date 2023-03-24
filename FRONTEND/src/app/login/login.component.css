@@ -8,7 +8,6 @@ a:link, a:active, a:visited{
   color: #3F0F88;
   text-decoration: none;
   background-color: transparent;
-
 }
 
 main{
@@ -20,6 +19,7 @@ main{
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: context-menu;
 }
 
 .box{
@@ -81,10 +81,10 @@ form {
 }
 
 .wah-logo{
-    display: flex;
-    align-items: center;
-    margin-top: 5px;
-    transform: translate(-2.5%, -10%);
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  transform: translate(-2.5%, -10%);
 }
 
 .wah-logo p{
@@ -94,6 +94,7 @@ form {
   line-height: 100%;
   letter-spacing: 0.2px;
   font-weight: 700;
+  cursor: context-menu;
 }
 
 .wah-logo img{
@@ -134,7 +135,6 @@ form {
   border-radius: 0.6rem;
   padding: 20px;
 }
-
 
 .eye{
   content: '\ea9a';
@@ -203,10 +203,6 @@ form {
   opacity: 80%;
 }
 
-
-/*REGISTER*/
-
-
 @media (max-width: 850px) {
   .forgot-pass{
     margin-left: 1em;
@@ -230,7 +226,6 @@ form {
     width: 100%;
     height: auto;
   }
-
 
   form {
     max-width: revert;
@@ -261,7 +256,6 @@ form {
     padding: .2rem .1rem;
     display: flex;
   }
-
 
   .text-slider {
     width: 100%;

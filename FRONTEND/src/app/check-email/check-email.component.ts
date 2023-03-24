@@ -6,16 +6,14 @@ import { slider, slideright} from '../animation';
   selector: 'app-check-email',
   templateUrl: './check-email.component.html',
   styleUrls: ['./check-email.component.css'],
-  animations:[
-    slideright, slider
-  ],
+  animations:[slideright, slider],
   encapsulation: ViewEncapsulation.None,
 })
+
 export class CheckEmailComponent implements OnInit, OnDestroy {
 
-
   isDisplayed: boolean = true;
-  toggleDiv(){
+  toggleDiv() {
     this.isDisplayed = this.isDisplayed? false:true;
   }
 
