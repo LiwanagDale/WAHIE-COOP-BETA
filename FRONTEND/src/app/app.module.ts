@@ -10,6 +10,9 @@ import { NewPassComponent } from './new-pass/new-pass.component';
 import { PassDoneComponent } from './pass-done/pass-done.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VerifyAccountComponent } from './verify-account/verify-account.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { StrengthMeterModule } from "ngx-strength-meter";
+
 
 
 @NgModule({
@@ -27,7 +30,10 @@ import { VerifyAccountComponent } from './verify-account/verify-account.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    StrengthMeterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

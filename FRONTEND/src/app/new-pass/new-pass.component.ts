@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy, ViewEncapsulation, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { slider, slideright} from '../animation';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-new-pass',
@@ -11,6 +12,8 @@ import { slider, slideright} from '../animation';
 })
 
 export class NewPassComponent implements OnInit, OnDestroy {
+
+  form!: FormGroup;
 
   isDisplayed: boolean = true;
   toggleDiv(){
@@ -31,14 +34,22 @@ export class NewPassComponent implements OnInit, OnDestroy {
     this.cchangetype = !this.cchangetype
   }
   
-  constructor(@Inject(DOCUMENT) private _document: any){}
+  constructor(@Inject(DOCUMENT) private _document: any, private fb: FormBuilder){}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this._document.body.classList.add('body');
+    this.form = this.fb.group({
+      password: ['', Validators.required],
+    });
   }
 
   ngOnDestroy() {
     this._document.body.classList.add('body');
   }
+
+  onStrengthChange(score: any) {
+    console.log('new score', score);
+  }
+
 
 }

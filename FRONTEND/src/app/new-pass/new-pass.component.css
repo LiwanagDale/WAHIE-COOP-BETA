@@ -64,10 +64,11 @@ form{
     max-width: 310px;
     width: 100%;
     margin: 0 auto;
-    height: 30rem;
-    display: flex;
+    height: 85.6%;
+    display: flex ;
     flex-direction: column;
     justify-content: space-evenly;
+   
 }
 
 .wah-logo{
@@ -133,11 +134,16 @@ label{
     flex-direction: column;
 }
 
+.meter{
+  margin-top:1.5em;
+  max-width: 500px;
+  width: 300px;
+}
 .eye{
-    position: absolute;
-    left: 90%;
-    bottom: -140%;
-    cursor: pointer;
+  position: absolute;
+  left: 90%;
+  bottom: 10%;
+  cursor: pointer;
 }
 
 .eye2{
