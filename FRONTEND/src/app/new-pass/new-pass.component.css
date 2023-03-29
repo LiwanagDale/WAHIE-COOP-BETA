@@ -113,6 +113,11 @@ form{
     height: 20px;
     margin-bottom: 3.5rem;
 }
+
+.enter_pass{
+  margin-bottom: 11px;
+}
+
 label{
     display: flex;
     flex-direction: column;
@@ -138,19 +143,22 @@ label{
   margin-top:1.5em;
   max-width: 500px;
   width: 300px;
+  margin-left: .3em;
 }
 .eye{
   position: absolute;
-  left: 90%;
-  bottom: 10%;
+  left: 87%;
+  bottom: -150%;
   cursor: pointer;
+  font-size: 1.3rem;
 }
 
 .eye2{
     position: absolute;
-    left: 90%;
-    bottom: -150%;
+    left: 87%;
+    bottom: -170%;
     cursor: pointer;
+    font-size: 1.3rem;
 }
 
 
